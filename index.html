@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Adventure: A Jornada de Belmont</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="Imagens/8bit-icon-3.jpg" rel="shortcut icon">
+
+    
+    
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#" data-section="home">Início</a></li>
+                <li><a href="#" data-section="sobre">Sobre</a></li>
+                <li><a href="#" data-section="galeria">Galeria</a></li>
+                <li><a href="#" data-section="jogar">Jogar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Seção "Início" -->
+        <section id="home" class="content active">
+            <div class="intro">
+                <h2 class="title"><span>Sobre</span><br>A Jornada de Belmont</h2>
+            </div>
+
+            <div class="about-site">
+                <p class="left-align">
+                    Com sua espada lendária, jogabilidade fácil, Pixel Adventure: A Jornada de Belmont foi feito para agradar os jogadores nostálgicos com o seu gráfico pixelizado inspirado nos jogos antigos.
+                </p>
+                <p class="right-align">
+                    O jogo se passa em uma época sombria e antiga, onde vampiros e monstros dominavam o mundo, onde apenas uma família as combatia, fazendo com que fossem altamente procuradas por monstros. Porém, um sobrevivente dessa família segue devastando esses monstros.
+                </p>
+            </div>
+
+            <div class="highlights">
+                <div class="highlight">
+                    <h3>Galeria de Imagens</h3>
+                    <p>Explore nossa galeria de arte.</p>
+                    <a href="#galeria" class="highlight-link">Veja a galeria</a>
+                </div>
+                <div class="highlight">
+                    <h3>Meu Instagram</h3>
+                    <p><a href="https://www.instagram.com/cassimiro7._/" target="_blank" class="highlight-link">@cassimiro7._</a></p>
+                </div>
+                <div class="highlight">
+                    <h3>Comece a Jogar</h3>
+                    <a href="#jogar" class="highlight-link">Jogar agora</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção "Sobre" -->
+        <section id="sobre" class="content">
+            <div class="intro sobre-intro">
+                <h2 class="title">Sobre o Game</h2>
+            </div>
+
+            <div class="about-site">
+                <p class="left-align">
+                    O Pixel Adventure: A Jornada de Belmont é um jogo de ação/plataforma onde o personagem principal é Simon Belmont, membro de uma família antiga, treinada a gerações para dizimar monstros. Mas, por serem a única família capaz de tal feito, eram constantemente caçados por essas criaturas. Com o passar do tempo, eles foram se extinguindo, porém um único sobrevivente ainda anda pelo mundo, e cabe a ele derrotar esses monstros. Sua jornada é encontrar o castelo perdido de sua família e achar esse conhecimento perdido.
+                </p>
+                <p class="right-align">
+                    Com sua espada lendária, jogabilidade fácil, Pixel Adventure: A Jornada de Belmont foi feito para agradar os jogadores nostálgicos com o seu gráfico pixelizado inspirado nos jogos antigos.
+                </p>
+            </div>
+        </section>
+
+        <!-- Seção "Galeria" -->
+        <section id="galeria" class="content">
+            <div class="intro sobre-intro">
+                <h2 class="title">Galeria</h2>
+                <p class="sub-title">Confira imagens do projeto que colocamos para você</p>
+            </div>
+
+            <div class="gallery">
+                <img src="Imagens/Fase1.jpeg" alt="Projeto 1">
+                <img src="Imagens/Fase Pt2.jpeg" alt="Projeto 2">
+                <img src="Imagens/Fase2.jpeg" alt="Projeto 3">
+                <img src="Imagens/Final.jpeg" alt="Projeto 4">
+                <img src="Imagens/GameOver.jpeg" alt="Projeto 5">
+                <img src="Imagens/Inicio.jpeg" alt="Projeto 6">
+            </div>
+        </section>
+
+        <!-- Seção "Jogar" -->
+        <section id="jogar" class="content">
+            <div class="intro jogar-intro">
+                <h2 class="title">Jogar</h2>
+                <p class="sub-title">Prepare-se para essa aventura a terras distantes</p>
+                <button class="play-button">Jogar Agora</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Pixel Adventure: A Jornada de Belmont Todos os direitos reservados.</p>
+        <p>Site feito por João Pedro de Oliveira Cassimiro.</p>
+    </footer>
+
+    <script>
+        
+        const navLinks = document.querySelectorAll('nav ul li a');
+const sections = document.querySelectorAll('section');
+
+function showSection(sectionId) {
+    sections.forEach(section => {
+        if (section.id === sectionId) {
+            section.style.display = "block";
+            setTimeout(() => {
+                section.classList.add("active");
+            }, 10); // Pequeno delay para ativar a animação
+        } else {
+            section.classList.remove("active");
+            setTimeout(() => {
+                section.style.display = "none";
+            }, 500); // Tempo igual ao da animação para evitar cortes
+        }
+    });
+}
+
+navLinks.forEach(link => {
+    link.addEventListener('click', function(event) {
+        event.preventDefault();
+        const sectionId = this.getAttribute('data-section');
+        showSection(sectionId);
+    });
+});
+
+// Exibir a seção inicial
+showSection('home');
+
+    </script>
+</body>
+</html>

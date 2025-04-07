@@ -1,0 +1,280 @@
+/* Geral */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Press Start 2P', cursive;
+}
+
+body {
+    background-color: black; /* Fundo cinza claro */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #333;
+    padding: 1rem 0;
+    box-shadow: 0 0 20px white;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+header nav ul li {
+    margin: 0 1rem;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    position: relative;
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Efeito ao passar o mouse nos links de navegação */
+header nav ul li a:hover {
+    background-color: #e60000;
+    transform: scale(1.1);
+    color: #fff;
+}
+
+/* Seções */
+main {
+    padding: 2rem;
+}
+
+/* Oculta as seções por padrão */
+section {
+    display: none;
+    margin-bottom: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Seção ativa com animação */
+section.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Títulos */
+h2, h3 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: white;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+p {
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    text-align: center;
+    color: white;
+}
+
+/* Introdução */
+.intro {
+    text-align: center;
+    background-color: #444; /* Cinza escuro para destacar */
+    padding: 50px 0;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.title {
+    text-align: center;
+    font-size: 2.5rem;
+    line-height: 1.2;
+}
+
+.title span {
+    display: block;
+    font-size: 3rem;
+    color: #fff58a;
+}
+
+.sub-title {
+    font-size: 1.5rem;
+    color: #fff58a;
+}
+
+/* Sobre o site */
+.about-site {
+    padding: 2rem;
+    background-color: #444; /* Cinza médio para separar os textos */
+    margin-bottom: 2rem;
+    border-radius: 10px;
+}
+
+/* Ajuste dos parágrafos específicos */
+.about-site .left-align {
+    text-align: left;
+    text-align: justify;
+}
+
+.about-site .right-align {
+    text-align: right;
+}
+
+/* Destaques */
+.highlights {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.highlight {
+    background-color: #444; /* Mantém os destaques visíveis */
+    padding: 1rem;
+    width: 30%;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.highlight h3 {
+    font-size: 1.3rem;
+}
+
+.highlight p {
+    margin: 1rem 0;
+}
+
+.highlight-link {
+    color: #fff58a;
+    text-decoration: none;
+}
+
+/* Estilo para a seção "Jogar" */
+.jogar-intro {
+    text-align: center;
+    background-color: #444;
+    padding: 50px 0;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.jogar-intro h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.jogar-intro .sub-title {
+    font-size: 1.5rem;
+    color: #fff58a;
+    margin-bottom: 2rem;
+}
+
+.play-button {
+    padding: 1rem 3rem;
+    background-color: #e60000;
+    color: #fff;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.play-button:hover {
+    background-color: #cc0000;
+    transform: scale(1.1);
+}
+
+/* Botões de ação */
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.cta-button {
+    padding: 1rem 2rem;
+    background-color: #e60000;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.cta-button:hover {
+    background-color: #cc0000;
+}
+
+/* Galeria */
+.gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px; /* Espaçamento entre as imagens */
+}
+
+.gallery img {
+    width: 30%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #444;
+    margin-top: 2rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .highlights {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .highlight {
+        width: 90%;
+        margin-bottom: 1rem;
+    }
+
+    .about-site p {
+        text-align: center;
+    }
+
+    .about-site .left-align, .about-site .right-align {
+        text-align: center;
+    }
+
+    .gallery img {
+        width: 100%;
+    }
+
+    .play-button {
+        width: 100%;
+        padding: 1rem;
+    }
+}
