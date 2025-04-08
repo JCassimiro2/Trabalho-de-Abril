@@ -12,40 +12,62 @@ body {
     line-height: 1.6;
 }
 
-/* Cabeçalho */
+/* Estilização do cabeçalho */
+/* Estilização do cabeçalho */
 header {
     background-color: #333;
     padding: 1rem 0;
     box-shadow: 0 0 20px white;
 }
 
-header nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
+/* Contêiner de navegação */
+/* Estilização do cabeçalho */
+header {
+    background-color: #333;
+    padding: 1rem 0;
+    box-shadow: 0 0 20px white;
 }
 
-header nav ul li {
+/* Barra de navegação */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilização da logo */
+.logo img {
+    height: 100px; /* Ajuste conforme necessário */
+    margin-right: 1rem;
+}
+
+/* Lista de navegação */
+.nav-links {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
     margin: 0 1rem;
 }
 
-header nav ul li a {
+.nav-links a {
     color: #fff;
     text-decoration: none;
     padding: 0.5rem 1rem;
     border-radius: 5px;
     font-size: 1.2rem;
-    position: relative;
-    display: inline-block;
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
-/* Efeito ao passar o mouse nos links de navegação */
-header nav ul li a:hover {
+.nav-links a:hover {
     background-color: #e60000;
     transform: scale(1.1);
     color: #fff;
 }
+
 
 /* Seções */
 main {
