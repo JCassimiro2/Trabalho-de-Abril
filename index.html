@@ -7,7 +7,6 @@
     <link href="css/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link href="Imagens/Logo.png" rel="shortcut icon">
-    
 </head>
 <body>
     <header>
@@ -45,7 +44,7 @@
                 <div class="highlight">
                     <h3>Galeria de Imagens</h3>
                     <p>Explore nossa galeria de arte.</p>
-                    <a href="#" class="highlight-link galeria-link">Veja a galeria</a>
+                    <a href="#" class="highlight-link galeria-link" data-section="galeria">Veja a galeria</a>
                 </div>
                 <div class="highlight">
                     <h3>Meu Instagram</h3>
@@ -54,10 +53,9 @@
                 </div>
                 <div class="highlight">
                     <h3>Comece a Jogar</h3>
-                    <a href="#" class="highlight-link jogar-link">Jogar agora</a>
+                    <a href="#" class="highlight-link jogar-link" data-section="jogar">Jogar agora</a>
                 </div>
             </div>
-            
         </section>
 
         <!-- Seção "Sobre" -->
@@ -99,7 +97,6 @@
                 <p id="mensagem-enviada" style="display: none; margin-top: 1rem; color: #fff58a;">Enviado!</p>
             </div>            
         </section>
-        
 
         <!-- Seção "Galeria" -->
         <section id="galeria" class="content">
@@ -161,26 +158,83 @@
             });
         });
     
-        // Exibir a seção inicial
         showSection('home');
     
-        // Enviar botão
         const btnEnviar = document.getElementById('btn-enviar');
         const msgEnviada = document.getElementById('mensagem-enviada');
         const nomeInput = document.getElementById('nome');
         const emailInput = document.getElementById('email');
         const mensagemInput = document.getElementById('mensagem');
     
+        function criarAviso(input, texto) {
+            let aviso = input.parentNode.querySelector('.campo-aviso');
+            if (!aviso) {
+                aviso = document.createElement('span');
+                aviso.classList.add('campo-aviso');
+                aviso.style.color = 'red';
+                aviso.style.fontSize = '0.8rem';
+                aviso.style.marginLeft = '10px';
+                aviso.style.display = 'inline';
+                input.parentNode.appendChild(aviso);
+            }
+            aviso.textContent = texto;
+            aviso.style.display = 'inline';
+            input.style.border = '2px solid red';
+    
+            // Remove aviso depois de 3 segundos (mas a borda continua até corrigir)
+            setTimeout(() => {
+                aviso.style.display = 'none';
+            }, 3000);
+        }
+    
+        function removerErro(input) {
+            const aviso = input.parentNode.querySelector('.campo-aviso');
+            if (aviso) {
+                aviso.style.display = 'none';
+            }
+            input.style.border = '';
+        }
+    
+        // Quando clicar no campo, remove os erros
+        [nomeInput, emailInput, mensagemInput].forEach(input => {
+            input.addEventListener('focus', () => {
+                removerErro(input);
+            });
+        });
+    
         btnEnviar.addEventListener('click', () => {
-            // Mostra a mensagem "Enviado!"
+            const nome = nomeInput.value.trim();
+            const email = emailInput.value.trim();
+            const mensagem = mensagemInput.value.trim();
+    
+            let erro = false;
+    
+            if (!nome) {
+                criarAviso(nomeInput, "Campo obrigatório");
+                erro = true;
+            }
+    
+            if (!email) {
+                criarAviso(emailInput, "Campo obrigatório");
+                erro = true;
+            } else if (!email.includes("@")) {
+                criarAviso(emailInput, "Inclua um '@' no e-mail.");
+                erro = true;
+            }
+    
+            if (!mensagem) {
+                criarAviso(mensagemInput, "Campo obrigatório");
+                erro = true;
+            }
+    
+            if (erro) return;
+    
             msgEnviada.style.display = 'block';
     
-            // Limpa os campos
             nomeInput.value = '';
             emailInput.value = '';
             mensagemInput.value = '';
     
-            // Esconde a mensagem depois de 5 segundos (5000 ms)
             setTimeout(() => {
                 msgEnviada.style.display = 'none';
             }, 5000);
