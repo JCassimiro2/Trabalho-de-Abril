@@ -92,6 +92,10 @@
                 <label for="mensagem" class="insira3">Deixe uma mensagem:</label>
                 <textarea id="mensagem" name="mensagem"></textarea>
             </div>
+            <div class="contato-do-jogo4">
+                <button id="btn-enviar" class="cta-button">Enviar</button>
+                <p id="mensagem-enviada" style="display: none; margin-top: 1rem; color: #fff58a;">Enviado!</p>
+            </div>            
         </section>
         
 
@@ -128,37 +132,59 @@
     </footer>
 
     <script>
-        
         const navLinks = document.querySelectorAll('nav ul li a');
-const sections = document.querySelectorAll('section');
-
-function showSection(sectionId) {
-    sections.forEach(section => {
-        if (section.id === sectionId) {
-            section.style.display = "block";
-            setTimeout(() => {
-                section.classList.add("active");
-            }, 10); // Pequeno delay para ativar a animação
-        } else {
-            section.classList.remove("active");
-            setTimeout(() => {
-                section.style.display = "none";
-            }, 500); // Tempo igual ao da animação para evitar cortes
+        const sections = document.querySelectorAll('section');
+    
+        function showSection(sectionId) {
+            sections.forEach(section => {
+                if (section.id === sectionId) {
+                    section.style.display = "block";
+                    setTimeout(() => {
+                        section.classList.add("active");
+                    }, 10);
+                } else {
+                    section.classList.remove("active");
+                    setTimeout(() => {
+                        section.style.display = "none";
+                    }, 500);
+                }
+            });
         }
-    });
-}
-
-navLinks.forEach(link => {
-    link.addEventListener('click', function(event) {
-        event.preventDefault();
-        const sectionId = this.getAttribute('data-section');
-        showSection(sectionId);
-    });
-});
-
-// Exibir a seção inicial
-showSection('home');
-
+    
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                const sectionId = this.getAttribute('data-section');
+                showSection(sectionId);
+            });
+        });
+    
+        // Exibir a seção inicial
+        showSection('home');
+    
+        // Enviar botão
+        const btnEnviar = document.getElementById('btn-enviar');
+        const msgEnviada = document.getElementById('mensagem-enviada');
+        const nomeInput = document.getElementById('nome');
+        const emailInput = document.getElementById('email');
+        const mensagemInput = document.getElementById('mensagem');
+    
+        btnEnviar.addEventListener('click', () => {
+            // Mostra a mensagem "Enviado!"
+            msgEnviada.style.display = 'block';
+    
+            // Limpa os campos
+            nomeInput.value = '';
+            emailInput.value = '';
+            mensagemInput.value = '';
+    
+            // Esconde a mensagem depois de 5 segundos (5000 ms)
+            setTimeout(() => {
+                msgEnviada.style.display = 'none';
+            }, 5000);
+        });
     </script>
+    
+    
 </body>
 </html>
