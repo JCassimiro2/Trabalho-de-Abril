@@ -143,36 +143,33 @@ p {
     border-radius: 10px;
 }
 
-.contato-do-jogo{
+/* Estilização dos campos de contato */
+.contato-do-jogo,
+.contato-do-jogo2,
+.contato-do-jogo3 {
     background-color: #444; /* Cinza médio para separar os textos */
     border-radius: 10px;
     padding: 1rem;
     margin: 10px;
-    .insira{
-        text-align: left;
-        margin: 10px;
-    }
 }
-.contato-do-jogo2{
-    background-color: #444; /* Cinza médio para separar os textos */
-    border-radius: 10px;
-    padding: 1rem;
-    margin: 10px;
-    .insira2{
-        text-align: left;
-        margin: 10px;
-    }
+
+.contato-do-jogo label,
+.contato-do-jogo2 label,
+.contato-do-jogo3 label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: white;
 }
-.contato-do-jogo3{
-    background-color: #444; /* Cinza médio para separar os textos */
-    border-radius: 10px;
-    padding: 1rem;
-    margin: 10px;
-    .insira3{
-        text-align: left;
-        margin: 10px;
-    }
+
+.contato-do-jogo input,
+.contato-do-jogo2 input,
+.contato-do-jogo3 textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: none;
 }
+
 
 /* Ajuste dos parágrafos específicos */
 .about-site .left-align {
