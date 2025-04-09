@@ -7,12 +7,16 @@
 }
 
 body {
-    background-color: black; /* Fundo cinza claro */
+    background-image: url('PlanoDeFundo.png'); /* Usa a imagem como fundo */
+    background-size: cover; /* Faz a imagem cobrir toda a tela */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita repetição */
+    background-attachment: fixed;
     color: #333;
     line-height: 1.6;
 }
 
-/* Estilização do cabeçalho */
+
 /* Estilização do cabeçalho */
 header {
     background-color: #333;
@@ -20,7 +24,6 @@ header {
     box-shadow: 0 0 20px white;
 }
 
-/* Contêiner de navegação */
 /* Estilização do cabeçalho */
 header {
     background-color: #333;
