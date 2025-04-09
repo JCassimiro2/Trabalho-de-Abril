@@ -79,16 +79,23 @@ section {
     display: none;
     margin-bottom: 2rem;
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateX(100%);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 10px; /* ajusta conforme seu layout, esse valor pode ser diferente */
+    z-index: 0;
 }
 
-/* Seção ativa com animação */
 section.active {
     display: block;
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
+    z-index: 1;
+    position: relative;
 }
+
 
 
 /* Títulos */
@@ -332,3 +339,19 @@ footer {
         padding: 1rem;
     }
 }
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
