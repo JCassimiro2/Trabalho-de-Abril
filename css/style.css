@@ -143,6 +143,37 @@ p {
     border-radius: 10px;
 }
 
+.contato-do-jogo{
+    background-color: #444; /* Cinza médio para separar os textos */
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 10px;
+    .insira{
+        text-align: left;
+        margin: 10px;
+    }
+}
+.contato-do-jogo2{
+    background-color: #444; /* Cinza médio para separar os textos */
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 10px;
+    .insira2{
+        text-align: left;
+        margin: 10px;
+    }
+}
+.contato-do-jogo3{
+    background-color: #444; /* Cinza médio para separar os textos */
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 10px;
+    .insira3{
+        text-align: left;
+        margin: 10px;
+    }
+}
+
 /* Ajuste dos parágrafos específicos */
 .about-site .left-align {
     text-align: left;
