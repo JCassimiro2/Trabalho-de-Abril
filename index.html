@@ -9,6 +9,12 @@
     <link href="Imagens/Logo.png" rel="shortcut icon">
 </head>
 <body>
+
+    <div id="imageModal" class="modal">
+        <span class="modal-close" id="modalClose">&times;</span>
+        <img id="modalImage" src="" alt="Imagem Ampliada">
+    </div>
+    
     <header>
         <nav class="navbar">
             <div class="logo">
@@ -239,6 +245,28 @@
                 msgEnviada.style.display = 'none';
             }, 5000);
         });
+        const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("modalImage");
+const modalClose = document.getElementById("modalClose");
+
+document.querySelectorAll('.gallery img').forEach(img => {
+    img.addEventListener('click', () => {
+        modalImg.src = img.src;
+        modal.classList.add('active');
+    });
+});
+
+modalClose.addEventListener('click', () => {
+    modal.classList.remove('active');
+});
+
+// Fecha o modal se clicar fora da imagem
+modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        modal.classList.remove('active');
+    }
+});
+
     </script>
     
     
