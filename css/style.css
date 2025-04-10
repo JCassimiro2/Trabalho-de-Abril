@@ -7,22 +7,11 @@
 }
 
 body {
-    background-image: url('PlanoDeFundo.png'); /* Usa a imagem como fundo */
-    background-size: cover; /* Faz a imagem cobrir toda a tela */
-    background-position: center; /* Centraliza a imagem */
-    background-repeat: no-repeat; /* Evita repetição */
-    background-attachment: fixed;
+    background-color: black;
     color: #333;
     line-height: 1.6;
 }
 
-
-/* Estilização do cabeçalho */
-header {
-    background-color: #333;
-    padding: 1rem 0;
-    box-shadow: 0 0 20px white;
-}
 
 /* Estilização do cabeçalho */
 header {
@@ -83,7 +72,7 @@ section {
     margin-bottom: 2rem;
     opacity: 0;
     transform: translateX(100%);
-    transition: transform 0.5s ease, opacity 0.5s ease;
+    transition: transform 0.7s ease, opacity 0.5s ease;
     position: absolute;
     width: 100%;
     left: 0;
