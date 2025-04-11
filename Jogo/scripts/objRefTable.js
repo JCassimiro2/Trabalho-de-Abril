@@ -89,7 +89,6 @@ self.C3_JsPropNameTable = [
 	{Texto2: 0},
 	{Texto3: 0},
 	{Retry: 0},
-	{Vampira: 0},
 	{Plataforma: 0},
 	{Senóide: 0},
 	{Dracula: 0},
@@ -129,6 +128,5 @@ self.InstanceType = {
 	Texto2: class extends self.ITextInstance {},
 	Texto3: class extends self.ITextInstance {},
 	Retry: class extends self.ISpriteFontInstance {},
-	Vampira: class extends self.ISpriteInstance {},
 	Dracula: class extends self.ISpriteInstance {}
 }
