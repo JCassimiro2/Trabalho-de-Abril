@@ -297,12 +297,89 @@ footer {
 @media (max-width: 768px) {
     body {
         font-size: 14px;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* evita scroll lateral */
+    }
+
+    header nav ul {
+        flex-direction: column;
+        text-align: center;
+        padding: 0;
+    }
+
+    .highlights {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .highlight {
+        width: 90%;
+        margin-bottom: 1rem;
+        text-align: center;
+        word-break: break-word; /* quebra textos longos */
+    }
+
+    .highlight h2 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+        word-wrap: break-word;
+    }
+
+    .about-site {
+        padding: 1rem;
+    }
+
+    .about-site p {
+        text-align: center;
+    }
+
+    .about-site .left-align,
+    .about-site .right-align {
+        text-align: center;
+    }
+
+    .gallery {
+        padding: 1rem;
+    }
+
+    .gallery img {
+        width: 100%;
+        height: auto;
+    }
+
+    .play-button {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    /* Impede que o conteúdo fique maior que a tela */
+    * {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .highlight p, .highlight a, .highlight span {
+        word-break: break-word;
+    }
+}
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
     }
 
     header nav ul {
         flex-direction: column;
         text-align: center;
     }
+
+    .hero h1 {
+        font-size: 2rem;
+        text-align: center;
+        padding: 1rem;
+        word-break: break-word;
+    }
+    
 
     .highlights {
         flex-direction: column;
