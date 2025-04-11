@@ -25,7 +25,7 @@
                 <li><a href="#" data-section="sobre">Sobre</a></li>
                 <li><a href="#" data-section="contato">Contato</a></li>
                 <li><a href="#" data-section="galeria">Galeria</a></li>
-                <li><a href="#" data-section="jogar">Jogar</a></li>
+                <li><a href="jogo/index.html" target="_blank">Jogar</a></li>
             </ul>
         </nav>
     </header>  
@@ -59,7 +59,7 @@
                 </div>
                 <div class="highlight">
                     <h3>Comece a Jogar</h3>
-                    <a href="#" class="highlight-link jogar-link" data-section="jogar">Jogar agora</a>
+                    <a href="jogo/index.html" target="_blank" class="highlight-link">Jogar agora</a>
                 </div>
             </div>
         </section>
@@ -120,19 +120,6 @@
                 <img src="Imagens/Inicio.jpeg" alt="Projeto 6">
             </div>
         </section>
-
-        <!-- Seção "Jogar" -->
-    
-        <section id="jogar" class="content">
-             <div class="intro jogar-intro">
-                <h2 class="title">Jogar</h2>
-                <p class="sub-title">Prepare-se para essa aventura a terras distantes</p>
-                <a href="Jogo/index.html" target="_blank" class="btn">
-                    Jogar Agora
-                </a>
-            </div>
-        </section>
-  
     </main>
 
     <footer>
@@ -143,7 +130,7 @@
     <script>
         const navLinks = document.querySelectorAll('nav ul li a');
         const sections = document.querySelectorAll('section');
-    
+
         function showSection(sectionId) {
             sections.forEach(section => {
                 if (section.id === sectionId) {
@@ -159,27 +146,27 @@
                 }
             });
         }
-    
+
         navLinks.forEach(link => {
             link.addEventListener('click', function(event) {
                 const sectionId = this.getAttribute('data-section');
-    
+
                 // Se for o botão "Jogar", deixa o link funcionar normalmente
-                if (sectionId === 'jogar') return;
-    
+                if (!sectionId || sectionId === 'jogar') return;
+
                 event.preventDefault();
                 showSection(sectionId);
             });
         });
-    
+
         showSection('home');
-    
+
         const btnEnviar = document.getElementById('btn-enviar');
         const msgEnviada = document.getElementById('mensagem-enviada');
         const nomeInput = document.getElementById('nome');
         const emailInput = document.getElementById('email');
         const mensagemInput = document.getElementById('mensagem');
-    
+
         function criarAviso(input, texto) {
             let aviso = input.parentNode.querySelector('.campo-aviso');
             if (!aviso) {
@@ -194,12 +181,12 @@
             aviso.textContent = texto;
             aviso.style.display = 'inline';
             input.style.border = '2px solid red';
-    
+
             setTimeout(() => {
                 aviso.style.display = 'none';
             }, 3000);
         }
-    
+
         function removerErro(input) {
             const aviso = input.parentNode.querySelector('.campo-aviso');
             if (aviso) {
@@ -207,25 +194,25 @@
             }
             input.style.border = '';
         }
-    
+
         [nomeInput, emailInput, mensagemInput].forEach(input => {
             input.addEventListener('focus', () => {
                 removerErro(input);
             });
         });
-    
+
         btnEnviar.addEventListener('click', () => {
             const nome = nomeInput.value.trim();
             const email = emailInput.value.trim();
             const mensagem = mensagemInput.value.trim();
-    
+
             let erro = false;
-    
+
             if (!nome) {
                 criarAviso(nomeInput, "Campo obrigatório");
                 erro = true;
             }
-    
+
             if (!email) {
                 criarAviso(emailInput, "Campo obrigatório");
                 erro = true;
@@ -233,48 +220,45 @@
                 criarAviso(emailInput, "Inclua um '@' no e-mail.");
                 erro = true;
             }
-    
+
             if (!mensagem) {
                 criarAviso(mensagemInput, "Campo obrigatório");
                 erro = true;
             }
-    
+
             if (erro) return;
-    
+
             msgEnviada.style.display = 'block';
-    
+
             nomeInput.value = '';
             emailInput.value = '';
             mensagemInput.value = '';
-    
+
             setTimeout(() => {
                 msgEnviada.style.display = 'none';
             }, 5000);
         });
-    
+
         const modal = document.getElementById("imageModal");
         const modalImg = document.getElementById("modalImage");
         const modalClose = document.getElementById("modalClose");
-    
+
         document.querySelectorAll('.gallery img').forEach(img => {
             img.addEventListener('click', () => {
                 modalImg.src = img.src;
                 modal.classList.add('active');
             });
         });
-    
+
         modalClose.addEventListener('click', () => {
             modal.classList.remove('active');
         });
-    
+
         modal.addEventListener('click', (e) => {
             if (e.target === modal) {
                 modal.classList.remove('active');
             }
         });
     </script>
-    
-    
-    
 </body>
 </html>
