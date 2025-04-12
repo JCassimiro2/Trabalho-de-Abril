@@ -47,7 +47,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Acts.ResetGlobals,
 		C3.Plugins.System.Cnds.ForEach,
 		C3.Behaviors.Sin.Exps.CyclePosition,
-		C3.Plugins.Mouse.Cnds.OnClick
+		C3.Plugins.Mouse.Cnds.OnObjectClicked
 	];
 };
 self.C3_JsPropNameTable = [
